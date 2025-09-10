@@ -2,14 +2,18 @@ package kartya;
 
 public class Kartya {
 
+    static String[] pakli; // csak itt hozzuk létre
+
     public static void main(String[] args) {
-        //static String[] pakli = new String[22];
-        
+        osszeallit();
+        kirak();
+    }
+
+    private static void osszeallit() {
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "XIII"};
         
-        
-        String[] pakli = new String[szinek.length * ertekek.length];
+        pakli = new String[szinek.length * ertekek.length]; // itt inicializáljuk
 
         int index = 0;
         for (int i = 0; i < szinek.length; i++) {
@@ -18,7 +22,9 @@ public class Kartya {
                 pakli[index++] = szin + " " + ertekek[j];
             }
         }
-
+    }
+    
+    private static void kirak() {
         int oszlopok = 3;
         int sorok = 7;
 
@@ -32,5 +38,4 @@ public class Kartya {
             System.out.println();
         }
     }
-    
 }
